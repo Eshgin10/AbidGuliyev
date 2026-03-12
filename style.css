@@ -51,9 +51,13 @@ body {
 .burger-menu {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    justify-content: center;
+    gap: 6px;
     cursor: pointer;
     padding: 8px;
+    width: 40px;
+    height: 40px;
+    position: relative;
 }
 
 .burger-line {
@@ -636,12 +640,19 @@ p {
     cursor: pointer;
 }
 
+.burger-menu.active .burger-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+}
+
 .burger-menu.active .burger-line:first-child {
-    transform: rotate(45deg) translate(6px, 6px);
+    transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .burger-menu.active .burger-line:last-child {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 @media (min-width: 769px) {
